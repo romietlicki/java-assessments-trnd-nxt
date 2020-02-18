@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>TrendNextTopic1_assignment1</display-name>
+	<servlet>
+		<servlet-name>ApplicationServlet</servlet-name>
+		<servlet-class>com.trendnxt.servlet.ApplicationServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ApplicationServlet</servlet-name>
+		<url-pattern>/trendnxt</url-pattern>
+	</servlet-mapping>
+
+<filter>
+	<filter-name>UserFilter</filter-name>
+	<filter-class>com.trendnxt.filters.UserFilter</filter-class>
+</filter> 
+
+
+<filter-mapping>
+    <filter-name>UserFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  
+  <welcome-file-list>
+  <welcome-file>view/login.html</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
